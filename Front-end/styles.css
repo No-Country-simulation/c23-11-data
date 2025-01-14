@@ -2,8 +2,8 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color:#4f4797;
-    color: white;
+    background-color:#2e0d57;
+    color: #f4f4f9;
     padding-top: 60px; /* Ajusta este valor según la altura de tu navegador */
     overflow-x: hidden; /* Evita que el contenido se desplace horizontalmente */
 }
@@ -59,7 +59,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #4f4797;
+    background-color: #2e0d57;
 }
 
 .banner .content {
@@ -74,6 +74,9 @@ body {
     flex: 0 0 40%; /* Ajusta la imagen a un 40% del ancho del contenedor */
     display: flex;
     justify-content: center; /* Centra la imagen dentro de su contenedor */
+    width: 480px; /* Ajusta el ancho a 480px */ 
+    height: 480px; /* Ajusta la altura a 480px */ 
+    object-fit: cover;
 }
 
 .banner .image img {
@@ -100,7 +103,7 @@ body {
     justify-content: space-between; /* Asegúrate de que los elementos se alineen adecuadamente */
     align-items: center;
     padding: 20px;
-    background-color: #4f4797;
+    background-color: #f4f4f9;
 }
 
 .banner2 .content2 {
@@ -115,23 +118,198 @@ body {
     flex: 0 0 40%; /* Ajusta la imagen a un 40% del ancho del contenedor */
     display: flex;
     justify-content: center; /* Centra la imagen dentro de su contenedor */
+    width: 480px; /* Ajusta el ancho a 480px */ 
+    height: 480px; /* Ajusta la altura a 480px */ 
+    object-fit: cover;
 }
 
 .banner2 .image2 img {
     max-width: 100%; /* Asegúrate de que la imagen no supere su contenedor */
     height: auto;
     border-radius: 15px; /* Bordes redondeados */
-    border: 2px solid white; /* Borde blanco alrededor de la imagen */
+    border: 2px solid rgb(0, 0, 0); /* Borde blanco alrededor de la imagen */
 }
 
 .banner2 h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
-    color: #faf3cc; /* Color dorado para resaltar el título */
+    color: #302f2b; /* Color dorado para resaltar el título */
 }
 
 .banner2 p {
     font-size: 1.2em;
-    color: #D3D3D3; /* Color gris claro para el párrafo */
+    color: #555151; /* Color gris claro para el párrafo */
 }
 
+/* Tarjetas*/
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f4f4f4; /* Fondo gris claro */
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 45%; /* Ajusta el ancho según sea necesario */
+    text-align: center;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card h2 {
+    color: #403b6e; /* Color del título */
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #333; /* Color del texto */
+    margin: 5px 0;
+}
+
+.logos img {
+    max-width: 50px; /* Ajusta el tamaño de los logos */
+    margin: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #403b6e; /* Color del botón */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #2b2d42; /* Color del botón al pasar el mouse */
+}
+
+/* FAQ (Preguntas Frecuentes)*/
+
+.faq {
+    padding: 20px;
+    background-color: #4f4797; /* Fondo en color púrpura oscuro */
+    color: white;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px; /* Ajusta el ancho según sea necesario */
+}
+
+.faq-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.faq-header img {
+    max-width: 50px;
+    margin-right: 10px;
+}
+
+.faq-header h2 {
+    margin: 0;
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+
+.faq-content {
+    background-color: white;
+    color: #4f4797; /* Color del texto en púrpura */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.faq-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.faq-content ul li {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.faq-link {
+    display: inline-block;
+    color: #4f4797; /* Color del enlace */
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.faq-link:hover {
+    text-decoration: underline;
+}
+
+/* Footer */   
+
+.footer {
+    background-color: #403b6e; /* Color de fondo del footer */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    margin: 10px 0;
+    flex: 1;
+    min-width: 250px; /* Ancho mínimo para cada sección del footer */
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #FFD700; /* Color dorado para resaltar los títulos */
+}
+
+.footer-section p, .footer-section ul, .footer-section a {
+    color: #D3D3D3; /* Color gris claro para el texto y enlaces */
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #D3D3D3;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #D3D3D3; /* Color gris claro para el texto */
+}
