@@ -293,6 +293,7 @@ body {
     margin: 10px 0;
     flex: 1;
     min-width: 250px; /* Ancho mínimo para cada sección del footer */
+    color: #f4f4f4;
 }
 
 .footer-section h3 {
