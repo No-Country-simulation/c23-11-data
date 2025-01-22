@@ -14,13 +14,15 @@
     <!-- Título y Favicon -->
     <title>Fraude Cero</title>
     <link rel="icon" href="ruta/a/tu/favicon.ico" type="image/x-icon"> <!-- Formato .ico -->
-    <link rel="icon" href="img/Fraude Cero logo.png" type="image/png"> <!-- Formato .png -->
+    <link rel="icon" href="img/2.png" type="image/png"> <!-- Formato .png -->
 </head>
 <body>
     
     <!-- Barra de Navegación -->
     <nav id="navbar" class="nav">
-        <div class="brand">FraudeCero</div>
+        <div class="brand"> 
+            <img src="img/logo 32x32.png" alt="FraudeCero"> 
+        </div>
         <ul>
             <li><a href="#">Quienes somos</a></li>
             <li><a href="#">Beneficios</a></li>
@@ -80,6 +82,116 @@
         </div>
     </section>
 
+    <!-- Sección del detector de fraudes -->
+
+    <section class="form-section">
+        <h2>Prueba nuestro detector de fraudes</h2>
+        <div class="form-container">
+            <form id="fraudForm">
+                <label for="dataInput">Ingresa datos para analizar:</label>
+                <input type="text" id="dataInput" name="dataInput" placeholder="Escribe aquí los datos">
+    
+                <!-- Nueva opción: Subir archivo -->
+                <label for="fileInput">Carga tu archivo:</label>
+                <input type="file" id="fileInput" name="fileInput" accept=".xlsx,.xls,.csv">
+                
+                <button type="submit">Analizar</button>
+            </form>
+            <div id="responseContainer"></div> <!-- Contenedor para mostrar la respuesta de la API -->
+        </div>
+    </section>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    
+    <script>
+    document.getElementById("fraudForm").addEventListener("submit", async function(event) {
+        event.preventDefault();
+    
+        const responseContainer = document.getElementById("responseContainer");
+        responseContainer.innerHTML = "";
+    
+        const dataInput = document.getElementById("dataInput").value;
+        const fileInput = document.getElementById("fileInput").files[0];
+        let input_data;
+    
+        try {
+            if (fileInput) {
+                input_data = await new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = (event) => {
+                        const fileType = fileInput.name.split('.').pop().toLowerCase();
+                        let jsonData;
+    
+                        if (fileType === 'csv') {
+                            const csvText = event.target.result;
+                            jsonData = csvToJson(csvText);
+                        } else {
+                            const data = new Uint8Array(event.target.result);
+                            const workbook = XLSX.read(data, { type: 'array' });
+                            const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+                            jsonData = XLSX.utils.sheet_to_json(worksheet);
+                        }
+    
+                        console.log("Datos leídos del archivo:", jsonData); // Verificación
+                        resolve(jsonData);
+                    };
+                    reader.onerror = () => reject(reader.error);
+                    reader.readAsArrayBuffer(fileInput);
+                });
+            } else if (dataInput) {
+                input_data = dataInput;
+                console.log("Datos de entrada:", input_data); // Verificación
+            } else {
+                responseContainer.innerHTML = `<p>Error: Debes proporcionar datos a analizar</p>`;
+                return;
+            }
+    
+            const response = await fetch("http://127.0.0.1:5000/predict", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    input_data: input_data
+                })
+            });
+    
+            const result = await response.json();
+            console.log("Respuesta de la API:", result); // Verificación
+    
+            if (response.ok) {
+                responseContainer.innerHTML = `<p>Respuesta de la API: ${JSON.stringify(result)}</p>`;
+            } else {
+                responseContainer.innerHTML = `<p>Error: ${result.message || "No se pudo procesar la solicitud"}</p>`;
+            }
+        } catch (error) {
+            console.error("Error al procesar:", error); // Captura cualquier error en consola
+            responseContainer.innerHTML = `<p>Error durante el procesamiento: ${error.message}</p>`;
+        }
+    });
+    
+    function csvToJson(csvText) {
+        const lines = csvText.split("\n");
+        const headers = lines[0].split(",");
+        const result = [];
+    
+        for (let i = 1; i < lines.length; i++) {
+            const obj = {};
+            const currentline = lines[i].split(",");
+    
+            for (let j = 0; j < headers.length; j++) {
+                obj[headers[j].trim()] = currentline[j].trim();
+            }
+    
+            result.push(obj);
+        }
+    
+        return result;
+    }
+    
+    </script>
+    
     <!-- Sección de Preguntas Frecuentes -->
     <section class="faq">
         <div class="faq-header">
