@@ -1,12 +1,12 @@
 /* Variables de color */
 :root {
-    --main-bg-color: #2e0d57;
-    --secondary-bg-color: #6515b8;
-    --text-color: #333;
+    --main-bg-color: #C07DFF;
+    --secondary-bg-color: #116DFF;
+    --text-color: #1a1919;
     --light-bg-color: #f4f4f4;
-    --highlight-color: #faf3cc;
-    --btn-bg-color: #49c9d3;
-    --btn-hover-bg-color: #2b2d42;
+    --highlight-color: #beae52;
+    --btn-bg-color: #5e49d3;
+    --btn-hover-bg-color: #1f2130;
 }
 
 /* Estilos generales */
@@ -14,7 +14,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--light-bg-color);
+    background-color: var(--main-bg-color);
     color: var(--text-color);
     padding-top: 30px; /* Ajusta este valor según la altura de tu navegador */
     overflow-x: hidden; /* Evita que el contenido se desplace horizontalmente */
@@ -67,6 +67,7 @@ body {
 }
 
 /* Estilos para la primera sección */
+
 .banner {
     display: flex;
     justify-content: space-between;
@@ -79,8 +80,8 @@ body {
     flex: 1;
     max-width: 50%; /* Ajusta el ancho del texto */
     padding: 20px;
-    background: var(--secondary-bg-color); /* Fondo semitransparente */
-    border-radius: 10px; /* Bordes redondeados */
+    background: var(--main-bg-color); /* Fondo semitransparente */
+    border-radius: 5px; /* Bordes redondeados */
 }
 
 .banner .image {
@@ -127,15 +128,6 @@ body {
     border-radius: 10px; /* Bordes redondeados */
 }
 
-.banner2 .image2 {
-    flex: 0 0 40%; /* Ajusta la imagen a un 40% del ancho del contenedor */
-    display: flex;
-    justify-content: center; /* Centra la imagen dentro de su contenedor */
-    width: 480px; /* Ajusta el ancho a 480px */ 
-    height: 480px; /* Ajusta la altura a 480px */ 
-    object-fit: cover;
-}
-
 .banner2 .image2 img {
     max-width: 100%; /* Asegúrate de que la imagen no supere su contenedor */
     height: auto;
@@ -154,58 +146,7 @@ body {
     color: #555151; /* Color gris claro para el párrafo */
 }
 
-/* Estilos para las tarjetas */
-
-.SectCards{
-    display: flex;
-    justify-content: center; /* Asegúrate de que los elementos se alineen adecuadamente */
-    align-items: center;
-    padding: 20px;
-    background-color: var(--light-bg-color);
-}
-.cards {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    background-color: var(--light-bg-color); /* Fondo */
-}
-
-.card {
-    background-color: #9a6ae6;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 99%; /* Ajusta el ancho según sea necesario */
-    text-align: center;
-    margin: 0;
-}
-
-.card iframe {
-    border: none; /* Elimina los bordes del iframe */
-    border-radius: 10px; /* Bordes redondeados para el iframe */
-    margin-top: 20px; /* Espacio superior para separar el iframe del contenido anterior */
-}
-
-.card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.card h2 {
-    color: #403b6e; /* Color del título */
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: var(--text-color); /* Color del texto */
-    margin: 5px 0;
-}
-
-.logos img {
-    max-width: 50px; /* Ajusta el tamaño de los logos */
-    margin: 5px;
-}
+/* botones */
 
 .btn {
     display: inline-block;
