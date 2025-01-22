@@ -3,10 +3,11 @@
     --main-bg-color: #C07DFF;
     --secondary-bg-color: #116DFF;
     --text-color: #1a1919;
-    --light-bg-color: #f4f4f4;
-    --highlight-color: #beae52;
+    --light-bg-color: #ffffff;
+    --highlight-color: #000000;
     --btn-bg-color: #5e49d3;
     --btn-hover-bg-color: #1f2130;
+    --footer-bg-color: #1f2130;
 }
 
 /* Estilos generales */
@@ -114,36 +115,45 @@ body {
 /* Estilos para la segunda sección */
 .banner2 {
     display: flex;
-    justify-content: space-between; /* Asegúrate de que los elementos se alineen adecuadamente */
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: var(--light-bg-color);
+    background-color: var(--main-bg-color);
 }
 
 .banner2 .content2 {
     flex: 1;
     max-width: 50%; /* Ajusta el ancho del texto */
     padding: 20px;
-    background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
-    border-radius: 10px; /* Bordes redondeados */
+    background: var(--main-bg-color); /* Fondo semitransparente */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.banner2 .image2 {
+    flex: 0 0 40%; /* Ajusta la imagen a un 40% del ancho del contenedor */
+    display: flex;
+    justify-content: center; /* Centra la imagen dentro de su contenedor */
+    width: 480px; /* Ajusta el ancho a 480px */ 
+    height: 480px; /* Ajusta la altura a 480px */ 
+    object-fit: cover;
 }
 
 .banner2 .image2 img {
     max-width: 100%; /* Asegúrate de que la imagen no supere su contenedor */
     height: auto;
     border-radius: 15px; /* Bordes redondeados */
-    border: 2px solid rgb(0, 0, 0); /* Borde blanco alrededor de la imagen */
+    border: 2px solid var(--light-bg-color); /* Borde blanco alrededor de la imagen */
 }
 
 .banner2 h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
-    color: #302f2b; /* Color dorado para resaltar el título */
+    color: var(--highlight-color); /* Color dorado para resaltar el título */
 }
 
 .banner2 p {
     font-size: 1.2em;
-    color: #555151; /* Color gris claro para el párrafo */
+    color: #D3D3D3; /* Color gris claro para el párrafo */
 }
 
 /* botones */
@@ -280,7 +290,7 @@ body {
 
 /* Estilos del footer */
 .footer {
-    background-color: var(--main-bg-color);
+    background-color: var(--footer-bg-color);
     color: var(--light-bg-color);
     padding: 40px 0;
     text-align: center;
