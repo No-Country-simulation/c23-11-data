@@ -1,242 +1,162 @@
-/* Variables de color */
-:root {
-    --main-bg-color: #C07DFF;
-    --secondary-bg-color: #116DFF;
-    --text-color: #1a1919;
-    --light-bg-color: #ffffff;
-    --highlight-color: #000000;
-    --btn-bg-color: #5e49d3;
-    --btn-hover-bg-color: #1f2130;
-    --footer-bg-color: #1f2130;
-}
-
-/* Estilos generales */
-body {
-    font-family: 'Arial', sans-serif;
+/* Reset de algunos estilos básicos */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, a {
     margin: 0;
     padding: 0;
-    background-color: var(--main-bg-color);
-    color: var(--text-color);
-    padding-top: 30px; /* Ajusta este valor según la altura de tu navegador */
-    overflow-x: hidden; /* Evita que el contenido se desplace horizontalmente */
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
 
-/* Estilos de la barra de navegación */
+/* Estilos generales del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F4F4F9;
+    color: #2E0D57;
+}
+
+/* Barra de navegación */
 .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6515B8;
+    padding: 10px 20px;
     position: fixed;
     width: 100%;
-    top: 0;
-    left: 0;
-    background-color: var(--main-bg-color);
-    transition: background-color 0.3s, color 0.3s;
-    padding: 10px 20px;
-    z-index: 1000;
-    box-sizing: border-box;
 }
 
 .nav.fixed {
-    background-color: var(--light-bg-color); /* Cambia el color de fondo a blanco */
-    color: var(--text-color); /* Cambia el color del texto a negro */
-    box-shadow: 0 1px 3px var(--main-bg-color);
+    background-color: hwb(0 100% 0%); /* Cambia este color según tu preferencia */
+    transition: background-color 0.3s; /* Añade una transición suave */
+    box-shadow: 0 1px 3px #6515B8;
 }
 
 .nav.fixed .brand, .nav.fixed ul li a {
-    color: var(--text-color); /* Asegúrate de que el texto también sea negro */
+    color: #000; /* AsegÃšrate de que el texto tambiÃĐn sea negro */
+}
+.nav .brand img {
+    height: 40px;
 }
 
 .nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    justify-content: flex-end;
-    flex-grow: 1;
+    gap: 20px;
 }
 
 .nav ul li {
-    margin: 0 15px;
+    list-style: none;
 }
 
 .nav ul li a {
-    color: var(--light-bg-color);
-    text-decoration: none;
-    font-size: 1.2em;
+    color: #F4F4F9;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-.nav.fixed ul li a {
-    color: var(--text-color); /* Cambia el color del texto a negro cuando el nav está fijo */
+.nav ul li a:hover {
+    color: #49C9D3;
 }
 
-/* Estilos para la primera sección */
-
+/* Sección banner */
 .banner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: var(--main-bg-color);
+    padding: 70px 20px;
+    background-color: #F4F4F9;
+    color: #2E0D57;
 }
 
 .banner .content {
-    flex: 1;
-    max-width: 50%; /* Ajusta el ancho del texto */
-    padding: 20px;
-    background: var(--main-bg-color); /* Fondo semitransparente */
-    border-radius: 5px; /* Bordes redondeados */
-}
-
-.banner .image {
-    flex: 0 0 40%; /* Ajusta la imagen a un 40% del ancho del contenedor */
-    display: flex;
-    justify-content: center; /* Centra la imagen dentro de su contenedor */
-    width: 480px; /* Ajusta el ancho a 480px */ 
-    height: 480px; /* Ajusta la altura a 480px */ 
-    object-fit: cover;
-}
-
-.banner .image img {
-    max-width: 100%; /* Asegúrate de que la imagen no supere su contenedor */
-    height: auto;
-    border-radius: 15px; /* Bordes redondeados */
-    border: 2px solid var(--light-bg-color); /* Borde blanco alrededor de la imagen */
+    max-width: 600px;
 }
 
 .banner h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: var(--highlight-color); /* Color dorado para resaltar el título */
+    color: #6515B8;
+    font-size: 2.5rem;
 }
 
 .banner p {
-    font-size: 1.2em;
-    color: #D3D3D3; /* Color gris claro para el párrafo */
+    margin-top: 20px;
+    line-height: 1.5;
 }
 
-/* botones */
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--btn-bg-color); /* Color del botón */
-    color: var(--light-bg-color);
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+.banner .image img {
+    max-width: 400px;
 }
 
-.btn:hover {
-    background-color: var(--btn-hover-bg-color); /* Color del botón al pasar el mouse */
-}
-
-/* Estilos para la sección del detector de fraude*/
+/* Sección del detector de fraudes */
 .form-section {
-    padding: 20px;
-    background-color: var(--light-bg-color);
+    padding: 50px 20px;
+    background-color: #FFFFFF;
     text-align: center;
 }
 
+.form-section h2 {
+    color: #6515B8;
+    margin-bottom: 20px;
+}
+
 .form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 600px;
     margin: 0 auto;
-    max-width: 600px; /* Ajusta el ancho según sea necesario */
-    background-color: var(--secondary-bg-color);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .form-container form {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .form-container label {
-    display: block;
-    margin: 10px 0 5px;
-    color: var(--light-bg-color);
+    text-align: left;
 }
 
 .form-container input[type="text"],
 .form-container input[type="file"] {
-    width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #2E0D57;
     border-radius: 5px;
-    box-sizing: border-box;
 }
 
 .form-container button {
-    padding: 10px 20px;
-    background-color: var(--btn-bg-color);
-    color: var(--light-bg-color);
+    background-color: #6515B8;
+    color: #F4F4F9;
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
     cursor: pointer;
-    font-size: 1em;
     transition: background-color 0.3s;
 }
 
 .form-container button:hover {
-    background-color: var(--btn-hover-bg-color);
+    background-color: #2E0D57;
 }
 
-/* Estilos del footer */
+/* Pie de página */
 .footer {
-    background-color: var(--footer-bg-color);
-    color: var(--light-bg-color);
-    padding: 40px 0;
+    background-color: #110026;
+    color: #F4F4F9;
+    padding: 20px 0;
     text-align: center;
 }
 
-.footer-container {
+.footer .footer-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.footer-section {
-    flex: 1;
-    min-width: 200px;
-    margin: 10px 0;
+.footer .footer-section h3 {
+    color: #49C9D3;
 }
 
-.footer-section h3 {
-    margin-bottom: 15px;
-    font-size: 1.5em;
+.footer .footer-section ul li a {
+    color: #F4F4F9;
 }
 
-.footer-section p {
-    font-size: 1em;
-}
-
-.footer-section ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-section ul li {
-    margin: 5px 0;
-}
-
-.footer-section ul li a {
-    color: var(--light-bg-color);
-    text-decoration: none;
-    font-size: 1em;
-}
-
-.footer-section ul li a:hover {
-    text-decoration: underline;
-}
-
-.footer-bottom {
-    padding: 10px 0;
-    border-top: 1px solid var(--light-bg-color);
+.footer .footer-bottom {
     margin-top: 20px;
-    font-size: 0.9em;
+    border-top: 1px solid #49C9D3;
+    padding-top: 10px;
 }
