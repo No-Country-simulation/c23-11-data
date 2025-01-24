@@ -226,68 +226,6 @@ body {
     background-color: var(--btn-hover-bg-color);
 }
 
-
-/* FAQ (Preguntas Frecuentes) */
-.faq {
-    padding: 20px;
-    background-color: var(--secondary-bg-color); /* Fondo en color púrpura oscuro */
-    color: var(--light-bg-color);
-    border-radius: 10px;
-    margin: 20px auto;
-    max-width: 800px; /* Ajusta el ancho según sea necesario */
-    text-align: center;
-}
-
-.faq-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.faq-header img {
-    max-width: 50px;
-    margin-right: 10px;
-}
-
-.faq-header h2 {
-    margin: 0;
-    font-size: 2em;
-    color: var(--light-bg-color);
-    text-align: center;
-}
-
-.faq-content {
-    background-color: var(--light-bg-color);
-    color: #4f4797; /* Color del texto en púrpura */
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.faq-content ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-}
-
-.faq-content ul li {
-    margin-bottom: 10px;
-    font-size: 1.2em;
-}
-
-.faq-link {
-    display: inline-block;
-    color: #4f4797; /* Color del enlace */
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.faq-link:hover {
-    text-decoration: underline;
-}
-
 /* Estilos del footer */
 .footer {
     background-color: var(--footer-bg-color);
